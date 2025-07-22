@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weathercoach</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="Assets/navbar-logo.png" type="image/x-icon" />
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md bg-light py-2 px-4 fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="Assets/navbar-logo.png" alt="Logo" class="logo-img me-2" />
+        <span class="brand-text">Weathercoach</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="climate change.html">Climate Change</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="Map.html">Map</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallary.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION-->
+  <section class="hero-section">
+    <div class="hero-image">
+      <img src="Assets/Hero-Image.png" alt="Background" />
+    </div>
+    <div class="hero-box">
+      <div class="hero-text">
+        <h1>Weather Forecast For Everyone</h1>
+        <p>
+          The forecast for today is sunny and bright, with a high of 68 degrees.
+          Enjoy the beautiful weather and make sure to wear sunscreen.
+        </p>
+        <button class="hero-button">Get Notifications</button>
+      </div>
+      <div class="hero-animation">
+        <dotlottie-player src="https://lottie.host/ac8fd2b2-55ff-419c-962b-df8de349c471/dU1ue52vrE.lottie"
+          background="transparent" speed="1" loop autoplay>
+        </dotlottie-player>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="sec2-container">
+    <div class="left-graphics">
+      <div class="circle">
+        <img src="Assets/Rectangle 7.png" alt="">
+      </div>
+
+      <!--  card 1-->
+      <div class="card-one">
+        <div class="captown">
+          <h3 class="city-name"></h3>
+          <div class="img-text"></div>
+        </div>
+        <div class="temp-one"></div>
+        <div class="day-one"></div>
+        <div class="desc-one"></div>
+        <div class="details-one">
+          <span class="humidity"></span>
+          <span class="wind"></span>
+          <span class="sunrisee"></span>
+        </div>
+      </div>
+
+      <!--  card 2 -->
+      <div class="card-two">
+        <h3 class="city-name"></h3>
+        <div class="temp-two"></div>
+        <div class="day-two"></div>
+        <div class="desc-two"></div>
+        <div class="details-two">
+          <span class="humidity"></span>
+          <span class="wind"></span>
+          <span class="sunrisee"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right side text -->
+    <div class="rightside-textbox">
+      <h1>Weather In Your Pocket<br><span>Directly From Your Phone</span></h1>
+      <p>
+        The forecast for today is sunny and bright, with a high of 68 degrees. Enjoy the beautiful weather and make sure
+        to wear sunscreen.<br><br>
+        The forecast for today is sunny and bright, with a high of 68 degrees. Enjoy the beautiful weather and make sure
+        to wear sunscreen.
+      </p>
+    </div>
+  </section>
+  <!-- section-3 -->
+  <section class="weather-summary">
+    <div class="info-container">
+      <div class="location">Surat</div>
+      <div class="date-time"> &nbsp;&nbsp;&nbsp; </div>
+
+      <div class="api-weather-wrapper">
+        <div class="api-weather-cards">
+          <div class="api-weather-card rain-one">
+            <img src="Assets/cloud.png" alt="Rain Icon">
+            <p></p>
+          </div>
+          <div class="api-weather-card rain-two">
+            <img src="Assets/cloud.png" alt="Rain Icon">
+            <p></p>
+          </div>
+          <div class="api-weather-card wind-one">
+            <img src="Assets/rain.png" alt="Wind Icon">
+            <p></p>
+          </div>
+          <div class="api-weather-card wind-two">
+            <img src="Assets/rain.png" alt="Wind Icon">
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="custom-temp-card">
+      <img src="Assets/Group 27.png" alt="Weather Icon">
+      <div class="custom-temp" id="temperature"></div>
+      <div class="custom-range" id="temp-range"></div>
+    </div>
+  </section>
+
+
+
+  <!-- TODAY Cards -->
+  <div class="forecast-container">
+    <div class="forecast-tabs">
+      <span class="tab active" data-tab="today">Today</span>
+      <span class="tab" data-tab="weekly">Weekly</span>
+    </div>
+
+    <!-- TODAY Cards -->
+    <div class="forecast-cards tab-content" id="today" style="display: flex;">
+      <div class="forecast-card">
+        <img src="Assets/Group 32.png" alt="weather icon" class="weather-icon" />
+        <div class="day-time">
+          <span class="day">Thu</span>
+          <span class="time">10:00AM</span>
+        </div>
+        <div class="temp-info">
+          <span class="temp">24°C</span>
+          <span class="temp-secondary">29°C</span>
+        </div>
+        <div class="stats">
+          <span>🌧 30km/h</span>
+          <span>💧 60%</span>
+        </div>
+        <p class="condition">Cloudy</p>
+      </div>
+
+      <div class="forecast-card">
+        <img src="Assets/Group 33.png" alt="weather icon" class="weather-icon" />
+        <div class="day-time">
+          <span class="day">Thu</span>
+          <span class="time">1:00PM</span>
+        </div>
+        <div class="temp-info">
+          <span class="temp">26°C</span>
+          <span class="temp-secondary">31°C</span>
+        </div>
+        <div class="stats">
+          <span>🌤 25km/h</span>
+          <span>💧 50%</span>
+        </div>
+        <p class="condition">Partly Sunny</p>
+      </div>
+
+      <div class="forecast-card">
+        <img src="Assets/Group 34.png" alt="weather icon" class="weather-icon" />
+        <div class="day-time">
+          <span class="day">Thu</span>
+          <span class="time">4:00PM</span>
+        </div>
+        <div class="temp-info">
+          <span class="temp">28°C</span>
+          <span class="temp-secondary">33°C</span>
+        </div>
+        <div class="stats">
+          <span>☀️ 15km/h</span>
+          <span>💧 40%</span>
+        </div>
+        <p class="condition">Sunny</p>
+      </div>
+
+      <div class="forecast-card">
+        <img src="Assets/Group 35.png" alt="weather icon" class="weather-icon" />
+        <div class="day-time">
+          <span class="day">Thu</span>
+          <span class="time">7:00PM</span>
+        </div>
+        <div class="temp-info">
+          <span class="temp">22°C</span>
+          <span class="temp-secondary">26°C</span>
+        </div>
+        <div class="stats">
+          <span>🌧 20km/h</span>
+          <span>💧 70%</span>
+        </div>
+        <p class="condition">Rainy</p>
+      </div>
+    </div>
+
+    <!-- WEEKLY Cards -->
+    <div class="forecast-cards tab-content" id="weekly" style="display: none;">
+      <div class="forecast-card">
+        <img src="Assets/Group 32.png" alt="weather icon" class="weather-icon" />
+        <div class="day-time">
+          <span class="day">Fri</span>
+          <span class="time">9:00AM</span>
+        </div>
+        <div class="temp-info">
+          <span class="temp">25°C</span>
+          <span class="temp-secondary">30°C</span>
+        </div>
+        <div class="stats">
+          <span>🌧 35km/h</span>
+          <span>💧 65%</span>
+        </div>
+        <p class="condition">Cloudy</p>
+      </div>
+
+      <div class="forecast-card">
+        <img src="Assets/Group 33.png" alt="weather icon" class="weather-icon" />
+        <div class="day-time">
+          <span class="day">Sat</span>
+          <span class="time">11:00AM</span>
+        </div>
+        <div class="temp-info">
+          <span class="temp">27°C</span>
+          <span class="temp-secondary">32°C</span>
+        </div>
+        <div class="stats">
+          <span>🌤 28km/h</span>
+          <span>💧 55%</span>
+        </div>
+        <p class="condition">Partly Sunny</p>
+      </div>
+
+      <div class="forecast-card">
+        <img src="Assets/Group 34.png" alt="weather icon" class="weather-icon" />
+        <div class="day-time">
+          <span class="day">Sun</span>
+          <span class="time">2:00PM</span>
+        </div>
+        <div class="temp-info">
+          <span class="temp">29°C</span>
+          <span class="temp-secondary">35°C</span>
+        </div>
+        <div class="stats">
+          <span>☀️ 12km/h</span>
+          <span>💧 35%</span>
+        </div>
+        <p class="condition">Sunny</p>
+      </div>
+
+      <div class="forecast-card">
+        <img src="Assets/Group 35.png" alt="weather icon" class="weather-icon" />
+        <div class="day-time">
+          <span class="day">Mon</span>
+          <span class="time">6:00PM</span>
+        </div>
+        <div class="temp-info">
+          <span class="temp">23°C</span>
+          <span class="temp-secondary">27°C</span>
+        </div>
+        <div class="stats">
+          <span>🌧 18km/h</span>
+          <span>💧 75%</span>
+        </div>
+        <p class="condition">Rainy</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="recent-weather-section">
+    <div class="recent-weather-text">
+      <h2>Recent<br>Search<br>Weather</h2>
+      <p>Lorem Ipsum Dolor Sit Amet,<br>Consectetur Adipiscing Elit. Bibendum Cursus Quis.</p>
+    </div>
+
+    <div class="card-scroll-container">
+      <div class="weather-card">
+        <img src="Assets/Rectangle 22.png" alt="Weather" />
+        <div class="info">
+          <p>Paris (Sun)</p>
+          <h2>20°C</h2>
+        </div>
+      </div>
+
+      <div class="weather-card">
+        <img src="Assets/Rectangle 23.png" alt="Weather" />
+        <div class="info">
+          <p>Delhi (Sun)</p>
+          <h2>20°C</h2>
+        </div>
+      </div>
+
+      <div class="weather-card">
+        <img src="Assets/Rectangle 24.png" alt="" />
+        <div class="info">
+          <p>Surat (Sun)</p>
+          <h2>20°C</h2>
+        </div>
+      </div>
+
+      <div class="weather-card">
+        <img src="Assets/Rectangle 25.png" alt="Weather" />
+        <div class="info">
+          <p>London (Sun)</p>
+          <h2>20°C</h2>
+        </div>
+      </div>
+
+      <div class="weather-card">
+        <img src="Assets/Rectangle 26.png" alt="Weather" />
+        <div class="info">
+          <p>Dubai (Sun)</p>
+          <h2>20°C</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <section class="weather-details-section">
+    <div class="weather-details-overlay">
+      <h2>Today's Weather Details</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Bibendum cursus quis.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit quis.</p>
+
+      <!-- Weather Info Cards -->
+      <div class="weather-info-cards">
+        <div class="info-card sunrise">
+          <p>Sunrise</p>
+          <h3>6:42 AM</h3>
+        </div>
+
+        <div class="info-card sunset">
+          <p>Sunset</p>
+          <h3>6:42 PM</h3>
+        </div>
+      </div>
+
+
+
+      <!-- Temperature Summary Card -->
+      <div class="temp-summary-card">
+        <h1>20°C</h1>
+        <div class="forecast-temps">
+          <div>
+            <p></p>
+            <small></small>
+            <p></p>
+          </div>
+          <div>
+            <p></p>
+            <small></small>
+            <p></p>
+          </div>
+          <div>
+            <p></p>
+            <small></small>
+            <p></p>
+          </div>
+          <div>
+            <p></p>
+            <small></small>
+            <p></p>
+          </div>
+          <div>
+            <p></p>
+            <small></small>
+            <p></p>
+          </div>
+        </div>
+        <div class="news-text">
+          <div class="news">
+            <p>News Update</p>
+            <a href="#">View Tomorrow's Forecast →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wind & Rain Stats -->
+    <div class="wind-rain-cards">
+      <div class="stat-card r1 ">
+        <img src="Assets/cloud-white.png" alt="Cloud Icon" />
+        <p></p>
+      </div>
+      <div class="stat-card r2">
+        <img src="Assets/cloud-white.png" alt="Cloud Icon" />
+        <p></p>
+      </div>
+      <div class="stat-card w1">
+        <img src="Assets/wind-white.png" alt="Wind Icon" />
+        <p></p>
+      </div>
+      <div class="stat-card w2">
+        <img src="Assets/wind-white.png" alt="Wind Icon" />
+        <p></p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <section class="news-section">
+    <h2>Weather Forecast News</h2>
+    <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit. Bibendum Cursus Quis</p>
+    <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit Quis</p>
+
+    <div class="news-cards">
+      <div class="news-card">
+        <img src="Assets/w1.png" alt="Lightning storm">
+        <p class="date">19th Jan, 2022</p>
+        <h4>One Of The Daily Rituals I Often Find Myself Doing</h4>
+        <a href="#">Read More</a>
+      </div>
+      <div class="news-card ">
+        <img src="Assets/w2.png" alt="Sunset with trees">
+        <p class="date">19th Jan, 2022</p>
+        <h4>Some Parts Of The State Saw Scant Relief, As Downtown</h4>
+        <a href="#">Read More</a>
+      </div>
+      <div class="news-card">
+        <img src="Assets/w3.png" alt="Rain in city">
+        <p class="date">19th Jan, 2022</p>
+        <h4>Cold Weather Alert Issued As Temperatures Set To Plummet</h4>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+
+    <div class="read-more-wrapper">
+      <button class="read-more-btn">Read More</button>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="Assets/navbar-logo.png" alt="Weathercoach Logo" class="footer-logo" />
+        <span class="brand-name">Weathercoach</span>
+      </div>
+      <nav class="footer-nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="climate change.html">Climate Change</a>
+        <a class="nav-link" href="news.html">News</a>
+        <a class="nav-link" href="Map.html">Map</a>
+        <a class="nav-link" href="gallary.html">Gallery</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+
+      </nav>
+    </div>
+    <hr />
+    <div class="footer-bottom">
+      <p>© 2022 Weathercoach. All Rights Reserved</p>
+      <div class="social-icons">
+        <a href="#"><img src="Assets/in.png" alt="LinkedIn" /></a>
+        <a href="#"><img src="Assets/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="Assets/twiter.png" alt="Twitter" /></a>
+        <a href="#"><img src="Assets/facebook.png" alt="Facebook" /></a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+  <script src="today-weekly card.js"></script>
+  <script>fetch(`https://api.openweathermap.org/data/2.5/weather?q=Surat&appid=42be70f3ff5bbc434c7e85804c547275`).then(res => res.json()).then(d => { document.querySelector(".sunrise h3").textContent = new Date(d.sys.sunrise * 1000).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit", hour12: true }); document.querySelector(".sunset h3").textContent = new Date(d.sys.sunset * 1000).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit", hour12: true }); });</script>
+
+</body>
+
+</html>

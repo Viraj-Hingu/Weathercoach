@@ -1,0 +1,267 @@
+/* Hero Section */
+.Hero-section-climate {
+  background: url("Assets/contactus.png") no-repeat center center/cover;
+  padding: 100px 0;
+  text-align: center;
+  color: white;
+  height: 350px;
+  font-size: 32px;
+  font-weight: bold;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Get In Touch */
+.detiled-text {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.detiled-text p {
+  text-align: center;
+  max-width: 900px;
+  font-size: 17px;
+}
+
+.text-sec2 h4 {
+  text-align: center;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+/* Contact Form Section */
+.user-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+.user-image img {
+  width: 100%;
+  max-width: 400px;
+}
+
+.user-detile {
+  flex: 1;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.userinput {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.userinput input,
+.userinput textarea {
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  outline: none;
+  width: 100%;
+  transition: border 0.3s ease;
+}
+
+.userinput input:focus,
+.userinput textarea:focus {
+  border-color: #4d90fe;
+}
+
+.userinput textarea {
+  grid-column: span 2;
+  resize: none;
+}
+
+.userinput button {
+  grid-column: span 2;
+  background-color: #1a73e8;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.userinput button:hover {
+  background-color: #0f5bd8;
+}
+
+/* Newsletter Section */
+.updates {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+  background: url('Assets/Rectangle 102.png') center/cover no-repeat;
+  padding: 40px 20px;
+  font-family: sans-serif;
+  flex-wrap: wrap;
+  color: white;
+  text-align: center;
+}
+
+.update-login h3 {
+  font-size: 28px;
+  font-weight: bold;
+  max-width: 500px;
+}
+
+.loginform-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 600px;
+}
+
+.loginform-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loginform-container label {
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.loginform-container input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.loginform-container input:focus {
+  border-bottom: 1px solid #2a61f2;
+}
+
+.loginform-container input::placeholder {
+  color: transparent;
+}
+
+.loginform-container button {
+  padding: 10px;
+  background-color: #2a61f2;
+  color: white;
+  border: none;
+  width: 200px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  align-self: center;
+}
+
+.loginform-container button:hover {
+  background-color: #1d47cc;
+}
+
+/* Footer Styling */
+.site-footer {
+  background: black;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+.social-icons img {
+  width: 24px;
+  margin: 0 5px;
+}
+
+@media (max-width: 768px) {
+  .userinput {
+    grid-template-columns: 1fr;
+  }
+
+  .update-login h3 {
+    font-size: 22px;
+  }
+
+  .updates {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detiled-text p {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .userinput button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .Hero-section-climate {
+    font-size: 24px;
+    padding: 60px 0;
+  }
+
+  .update-login h3 {
+    font-size: 18px;
+  }
+
+  .loginform-container button,
+  .userinput button {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .userinput input,
+  .userinput textarea {
+    font-size: 14px;
+  }
+}
