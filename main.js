@@ -1,4 +1,4 @@
-const apiKey = "42be70f3ff5bbc434c7e85804c547275";
+const apiKey = "5bdb7a991b80c371026e40b8cb6dfd6d";
 const city = "Surat";
 
 async function loadSuratWeatherCard() {
